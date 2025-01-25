@@ -9,7 +9,7 @@ done
 bashio::log.info "Preparing directories"
 cp -v -R /etc/cups /data
 rm -v -fR /etc/cups
-
+mkdir /etc/cups
 mount --bind /data/cups /etc/cups
 
 bashio::log.info "Starting CUPS server as CMD from S6"
