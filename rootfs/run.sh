@@ -7,8 +7,7 @@ until [ -e /var/run/avahi-daemon/socket ]; do
 done
 
 bashio::log.info "Preparing directories"
-mount --bind /data/cups/cupsd.conf /etc/cups/cupsd.conf || echo || dmesg
-
+cp /etc/cups/cupsd.conf /config/cupsd.conf
 bashio::log.info "Starting CUPS server as CMD from S6"
 
 cupsd -f
